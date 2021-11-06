@@ -6,3 +6,11 @@ body{
     list-style: none;
     list-style-type: none;
 }
+.done {
+	background: #51DF70 !important;
+	color: #00891E;
+}
+
+.delete {
+	display: none;
+}
