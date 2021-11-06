@@ -11,6 +11,14 @@ function inputLength(){
 		return task.length; // return the number of tasks in the list 
 	}
 }
+//START ADD ITEM LIST 
+function createListElement() {
+	let li = document.createElement("li");
+	li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
+	list.appendChild(li); //adds li to ul
+	input.value = ""; //Reset text input field
+}
+//END ADD ITEM LIST 
 
 // START ADD TASK TO LIST
 function addListAfterClick(){
@@ -30,15 +38,6 @@ enterButton.addEventListener("click",addListAfterClick);
 
 input.addEventListener("keypress", addListAfterKeypress);
 
-//START ADD ITEM LIST 
-
-let li = document.createElement("li");
-
-li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
-	list.appendChild(li); //adds li to ul
-	input.value = ""; //Reset text input field
-
-//END ADD ITEM LIST 
 
 
 //START MARK AS DONE OPTION
@@ -50,16 +49,17 @@ li.addEventListener("click", crossOut);//mark task as done when it was clicked
 
 // END MARK AS DONE OPTION
 
-// START ADD DELETE BUTTON
-var dBtn = document.createElement("button");
-dBtn.appendChild(document.createTextNode("X"));
-li.appendChild(dBtn);
-dBtn.addEventListener("click", deleteListItem);
-// END ADD DELETE BUTTON
-
 //ADD CLASS DELETE (DISPLAY: NONE)
 function deleteListItem(){
 	li.classList.add("delete")
 }
 //END ADD CLASS DELETE
+
+// START ADD DELETE BUTTON
+let dBtn = document.createElement("button");
+dBtn.appendChild(document.createTextNode("X"));
+li.appendChild(dBtn);
+dBtn.addEventListener("click", deleteListItem);
+// END ADD DELETE BUTTON
+
 
