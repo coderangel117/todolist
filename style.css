@@ -2,3 +2,7 @@ body{
     background-color: beige;
     color: black;
 }
+.tasks-list li{
+    list-style: none;
+    list-style-type: none;
+}
