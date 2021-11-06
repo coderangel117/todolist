@@ -7,8 +7,9 @@ let task = document.getElementByTagName("li");
 
 function inputLength(){
 	return input.value.length;// To return de length of input by user
-function listLength(){
-	return task.length; // return the number of tasks in the list 
+	function listLength(){
+		return task.length; // return the number of tasks in the list 
+	}
 }
 
 // START ADD TASK TO LIST
@@ -61,3 +62,4 @@ function deleteListItem(){
 	li.classList.add("delete")
 }
 //END ADD CLASS DELETE
+
