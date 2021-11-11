@@ -9,10 +9,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-left: 450px;
-	margin-right: 450px;
-	padding-left: 100px;
-	padding-right: 200px; 
+	margin-left: 650px;
 	width: 500px;
 	text-align: center;
 	margin-top: 100px;
@@ -21,10 +18,9 @@ body{
 }
 ul{
 	display: flex;
-	flex-direction: column;
+	flex-direction:column;
 	align-items: center;
 	list-style: none;
-	list-style-type: none;
 }
 .done {
 	background: #51DF70 !important;
@@ -33,7 +29,7 @@ ul{
 .delete {
 	display: none;
 }
-p{
+²li{
 	background-color: white;
 	color: black;
 	text-align: left;
