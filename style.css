@@ -5,17 +5,19 @@ body{
 	background-color:lightblue;
     color: black;
 }
+
 .container{	
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-left: 650px;
-	width: 500px;
+	margin-left: 50px;
+	margin-right: 50px;
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 50px;
 	min-height: 350px;
 	background: linear-gradient(to bottom, red 0%, violet 100%);
 }
+
 ul{
 	display: flex;
 	flex-direction:column;
@@ -26,10 +28,12 @@ ul{
 	background: #51DF70 !important;
 	color: #00891E;
 }
+
 .delete {
 	display: none;
 }
-²li{
+
+li{
 	background-color: white;
 	color: black;
 	text-align: left;
