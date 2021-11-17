@@ -13,6 +13,7 @@ function listLength(){
 
 function createListElement() {
 	var li = document.createElement("li"); // creates an element "li"
+	li.classList.add("inputUser")
 	li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
 	ul.appendChild(li); //adds li to ul
 	// li.innerHTML('<p>'+ input.value  + '</p>');
@@ -31,6 +32,7 @@ function createListElement() {
 
 	// START ADD DELETE BUTTON
 	var dBtn = document.createElement("button");
+	dBtn.classList.add("button");
 	dBtn.appendChild(document.createTextNode("X"));
 	li.appendChild(dBtn);
 	dBtn.addEventListener("click", deleteListItem);
