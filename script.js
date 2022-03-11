@@ -29,11 +29,14 @@ function createListElement() {
 	li.addEventListener("click",crossOut);
 	//END STRIKETHROUGH
 
+	// CREATION of DOM's ELEMENT CORRESPONDING TO TRASH IMG (USE TO DELETE)
+	let DOM_img = document.createElement("img");
+	DOM_img.src = "img/trash.png";
 
 	// START ADD DELETE BUTTON
 	let dBtn = document.createElement("button");
 	dBtn.classList.add("button");
-	dBtn.appendChild(document.createTextNode("X"));
+	dBtn.appendChild(DOM_img);
 	li.appendChild(dBtn);
 	dBtn.addEventListener("click", deleteListItem);
 	// END ADD DELETE BUTTON
