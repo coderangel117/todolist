@@ -1,6 +1,6 @@
 let enterButton = document.getElementById("enter");
 let input = document.getElementById("userInput");
-let ul = document.querySelector("ul");
+let ol = document.querySelector("ol");
 let item = document.getElementsByTagName("li");
 
 function inputLength(){
@@ -15,7 +15,7 @@ function createListElement() {
 	let li = document.createElement("li"); // creates an element "li"
 	li.classList.add("inputUser")
 	li.appendChild(document.createTextNode(input.value)); //makes text from input field the li text
-	ul.appendChild(li); //adds li to ul
+	ol.appendChild(li); //adds li to ol
 	// li.innerHTML('<p>'+ input.value  + '</p>');
 	input.value = ""; //Reset text input field
 
