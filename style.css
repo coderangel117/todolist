@@ -22,11 +22,10 @@ body{
 	background-color: whitesmoke;
 }
 
-ul{
+ol{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-	list-style: none;
 }
 .done {
 	background: #51DF70 !important;
