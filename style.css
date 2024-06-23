@@ -1,36 +1,73 @@
 /*COPYRIGHT (C)  todolist ( Gabriel PERINO) 2019. All rights reserved.*/
+.theme-light {
+	--bg-header:url(images/bg-desktop-light.jpg);
+	--bg-color: #ffffff;
+	--bg-color-secondary:#ffffff;
+	--font-color: #181824;
+}
+.theme-dark {
+	--bg-header:url(images/bg-desktop-dark.jpg);
+	--bg-color: #181824;
+	--bg-color-secondary:#25273c;
+	--font-color: #ffffff;
+}
 *{
+	user-select: none;
 	margin:0;
 	padding:0;
 }
+
+/*header{
+	min-width: 100%;
+	height: 300px;
+}*/
 body{
-	margin: auto;
-	width:100%;
-	height:auto;
-	background-color:white;
-    color: black;
+	display: flex;
+	justify-content: center;
+	background-image:var(--bg-header);
+	background-repeat: no-repeat;
+	background-size: 100% 400px;
+	background-color:var(--bg-color);
 }
 
-.container{	
+.container{
+	width: 550px;
+	height:100vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-left: 50px;
-	margin-right: 50px;
+	margin-top: 75px;
 	text-align: center;
-	margin-top: 50px;
-	min-height: 350px;
-	background-color: whitesmoke;
 }
 
+.menu{
+	color: white;
+	margin-bottom: 25px;
+	width: 450px;
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#ThemeButton{
+	border: none;
+	background-color: transparent;
+}
+input{
+	border:none;
+	margin-bottom: 25px;
+	width: 450px;
+	height:50px;
+	font-size:2em ;
+	background-color: var(--bg-color);
+	color: var(--font-color);
+}
 ol{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-}
-.done {
-	background: #51DF70 !important;
-	color: #00891E;
 }
 
 .delete {
@@ -38,12 +75,17 @@ ol{
 }
 
 li {
-	background-color: white;
-	color: black;
-	text-align: left;
-	border-style: solid;
+	padding: 5px;
+	background-color: var(--bg-color-secondary);
+	list-style-type: none;
+	color: var(--font-color);
+	border-bottom: 1px white ;
+	text-align: left	;
 	font-size: xx-large;
 	text-transform: capitalize;
 	min-height: 15px;
-	width: auto;
+	width: 450px;
+}
+li:hover{
+	cursor: pointer;
 }
