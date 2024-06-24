@@ -14,6 +14,7 @@ DOM_img.src = "images/icon-cross.svg";
 let dBtn = document.createElement("button");
 dBtn.classList.add("button");
 dBtn.appendChild(DOM_img);
+
 function ToggleTheme() {
     html.classList.toggle("theme-dark");
     html.classList.toggle("theme-light");
@@ -75,10 +76,12 @@ function createListElement() {
     console.log(JSON.parse(localStorage.getItem("TasksList")));
     input.value = ""; //Reset text input field
 
-    //@TODO	Add input tag in order to modify the list's elements
+    //@TODO     Add input tag in order to modify the list's elements
 
 
-}    function deleteListItem(item) {
+}
+
+function deleteListItem(item) {
     item.parentNode.removeChild(item);
 }
 
@@ -89,24 +92,22 @@ ol.addEventListener("click", function (event) {
     let storeList = JSON.parse(localStorage.getItem("TasksList"));
     if (liClicked.classList.contains("done")) {
         liClicked.innerText = strikeThrough(liClicked.innerText)
+    } else {
+        liClicked.innerText = unstrikeThrough(liClicked.innerText)
     }
-    else{
-        liClicked.innerText =  unstrikeThrough(liClicked.innerText)
-    }
-    storeList[liClicked.id]= {
+    storeList[liClicked.id] = {
         content: liClicked.innerText,
-        completed:!!liClicked.classList.contains("done")
-}
+        completed: !!liClicked.classList.contains("done")
+    }
     localStorage.setItem("TasksList", JSON.stringify(storeList));
 })
 
 ol.addEventListener('mouseover', function (event) {
     let li = event.target;
     li.appendChild(dBtn);
-    console.log( li.id)
-    dBtn.addEventListener("click", function (){
-           ol.removeChild(ol.children[li.id]);
-    } );
+    dBtn.addEventListener("click", function () {
+        ol.removeChild(ol.children[li.id]);
+    });
 
 })
 ol.addEventListener('mouseout', function (event) {
@@ -115,12 +116,14 @@ ol.addEventListener('mouseout', function (event) {
 
     li.removeChild(li.children[0]);
 })
+
 function strikeThrough(text) {
     return text
         .split('')
         .map(char => char + '\u0336')
         .join('')
 }
+
 function unstrikeThrough(text) {
     return text.replace(/[\u0336]/g, '')
 }
@@ -133,7 +136,7 @@ function addListAfterKeypress(event) {
 }
 
 
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
     let Tasks = localStorage.getItem("TasksList") ?? '[]'
     Tasks = JSON.parse(Tasks)
     if (Tasks.length > 0) {
