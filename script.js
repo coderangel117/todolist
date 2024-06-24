@@ -133,7 +133,7 @@ function addListAfterKeypress(event) {
 }
 
 
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
     let Tasks = localStorage.getItem("TasksList") ?? '[]'
     Tasks = JSON.parse(Tasks)
     if (Tasks.length > 0) {
